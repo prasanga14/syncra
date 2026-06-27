@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:17.6
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - syncra-postgres-data:/var/lib/postgresql/data
+    ports:
+      - '5433:5432'
+    networks:
+      - syncra-network
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U $$POSTGRES_USER']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+volumes:
+  syncra-postgres-data:
+networks:
+  syncra-network:
+    driver: bridge
