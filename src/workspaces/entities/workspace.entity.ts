@@ -1,6 +1,6 @@
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { Membership } from 'src/memberships/entities/membership.entity';
-import { Organization } from 'src/organizations/entities/organization.entity';
+import { BaseEntity } from '../../common/entities/base.entity';
+import { Membership } from '../../memberships/entities/membership.entity';
+import { Organization } from '../../organizations/entities/organization.entity';
 import {
   Column,
   Entity,

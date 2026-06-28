@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { Workspace } from 'src/workspaces/entities/workspace.entity';
+import { BaseEntity } from '../../common/entities/base.entity';
+import { Workspace } from '../../workspaces/entities/workspace.entity';
 
 @Entity('organizations')
 export class Organization extends BaseEntity {

@@ -1,6 +1,6 @@
-import { Membership } from 'src/memberships/entities/membership.entity';
+import { Membership } from '../../memberships/entities/membership.entity';
 import { Column, Entity, OneToMany } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
+import { BaseEntity } from '../../common/entities/base.entity';
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -21,6 +21,7 @@ export class User extends BaseEntity {
   hashedPassword: string;
 
   @Column({
+    type: 'text',
     name: 'hashed_refresh_token',
     nullable: true,
   })
