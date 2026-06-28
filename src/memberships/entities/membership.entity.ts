@@ -1,8 +1,8 @@
 import { Column, Entity, JoinColumn, ManyToOne, Unique } from 'typeorm';
 import { MembershipRole } from '../membership-role.enum';
-import { User } from 'src/users/entities/user.entity';
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { Workspace } from 'src/workspaces/entities/workspace.entity';
+import { User } from '../../users/entities/user.entity';
+import { BaseEntity } from '../../common/entities/base.entity';
+import { Workspace } from '../../workspaces/entities/workspace.entity';
 
 @Unique(['user', 'workspace'])
 @Entity('memberships')
